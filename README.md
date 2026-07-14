@@ -161,8 +161,6 @@ This project uses the **IBM Telco Customer Churn Dataset**, a publicly available
 
 > **Note:** The dataset is not included in this repository due to licensing considerations. Please download it directly from Kaggle using the link above.
 
-### Download
-
 ### Dataset Access
 
 The IBM Telco Customer Churn Dataset used in this project can be downloaded from Kaggle:
