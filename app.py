@@ -27,7 +27,7 @@ if st.button("Refresh / Reset App"):
 model = joblib.load("models/randomforest_final.pkl") #Model Random Forest
 scaler = joblib.load("models/scaler.pkl") #Normalisasi Data
 columns = joblib.load("models/columns.pkl") #Urutan Feature Training
-explainer = shap.TreeExplainer(model)
+explainer = shap.Explainer(model)
 
 #Ini buat judul di halaman sama tulisan dibawahnya 
 st.title("Customer Churn Prediction")
