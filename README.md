@@ -75,6 +75,14 @@ Users can upload customer data in CSV or Excel format. The uploaded data then un
 
 To improve model interpretability, the application automatically selects the appropriate SHAP visualization based on the number of uploaded records. A **SHAP Waterfall Plot** is generated for single-customer predictions, while a **SHAP Summary Plot** and feature importance visualization are provided for batch predictions. This deployment enables users to obtain accurate, explainable, and interactive customer churn predictions through a web-based interface.
 
+---
+
+## 🌐 Live Demo
+
+The customer churn prediction system has been successfully deployed using Streamlit Community Cloud and can be accessed online at:
+
+**Application:**  
+https://telecom-customer-churn-prediction-use-machine-learning.streamlit.app/
 
 ---
 
@@ -82,7 +90,7 @@ To improve model interpretability, the application automatically selects the app
 
 ### Requirements
 
-- Python 3.11+
+- Python 3.10
 - pip
 - Required Python libraries (see `requirements.txt`):
   - Streamlit
@@ -181,6 +189,7 @@ Telecom-Customer-Churn-Prediction/
 ├── images/
 ├── app.py
 ├── requirements.txt
+├── runtime.txt
 └── README.md
 
 ```
@@ -274,6 +283,7 @@ Telecom-Customer-Churn-Prediction/
 │
 ├── app.py                         # Streamlit deployment application
 ├── requirements.txt               # Python dependencies
+├── runtime.txt
 ├── README.md                      # Project documentation
 └── .gitignore                     # Git ignore configuration
 
