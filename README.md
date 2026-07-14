@@ -221,6 +221,9 @@ models/
 ├── scaler.pkl
 ├── columns.pkl
 └── explainer.pkl
+
+```
+
 ```
 
 ### Hardware Requirements
@@ -234,8 +237,6 @@ Recommended environment:
 - Windows 10/11 (or equivalent operating system)
 
 ```
-
----
 
 ## 📊 Results
 
@@ -289,8 +290,6 @@ Telecom-Customer-Churn-Prediction/
 This research has not been formally published yet.
 
 Citation information will be added after publication.
-
-```
 
 ---
 
