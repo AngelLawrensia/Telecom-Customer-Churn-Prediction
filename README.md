@@ -262,9 +262,6 @@ Telecom-Customer-Churn-Prediction/
 ├── images/                        # Figures and documentation assets
 │   ├── research_workflow.png
 │   ├── deployment_workflow.png
-│   ├── shap_summary.png
-│   ├── streamlit_home.png
-│   └── streamlit_prediction.png
 │
 ├── models/                        # Trained machine learning models
 │   ├── randomforest_final.pkl
@@ -278,7 +275,6 @@ Telecom-Customer-Churn-Prediction/
 ├── app.py                         # Streamlit deployment application
 ├── requirements.txt               # Python dependencies
 ├── README.md                      # Project documentation
-├── LICENSE                        # License information (optional)
 └── .gitignore                     # Git ignore configuration
 
 ```
