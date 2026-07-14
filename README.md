@@ -242,9 +242,11 @@ Recommended environment:
 
 The proposed approach successfully developed an end-to-end customer churn prediction system using the CRISP-DM methodology. After evaluating multiple machine learning algorithms under different experimental settings, the **Random Forest** model with refinement tuning was selected as the final model.
 
+```md
 | Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
 |-------|---------:|----------:|--------:|---------:|---------:|
 | **Random Forest (Final Model)** | **92.76%** | **83.66%** | **90.37%** | **86.89%** | **97.24%** |
+```
 
 The final model was deployed as an interactive Streamlit application with SHAP-based explainability for both single and batch customer churn prediction.
 
