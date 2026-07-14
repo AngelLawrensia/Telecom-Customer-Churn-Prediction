@@ -12,7 +12,6 @@ The project compares five supervised learning algorithms—Logistic Regression, 
 Experimental results show that Random Forest achieved the best overall performance after optimization, obtaining an Accuracy of 92.76%, Precision of 83.66%, Recall of 90.37%, F1-score of 86.89%, and ROC-AUC of 97.24%. This project demonstrates an end-to-end machine learning workflow that combines predictive performance, model interpretability, and practical deployment to support data-driven customer retention strategies in the telecommunications industry.
 
 ### Key Features
-### Key Features
 
 - **End-to-End Machine Learning Pipeline**  
   Implements a complete machine learning workflow based on the CRISP-DM methodology, covering data understanding, preprocessing, modeling, evaluation, interpretation, and deployment.
@@ -185,7 +184,7 @@ Telecom-Customer-Churn-Prediction/
 └── README.md
 
 ```
-```
+
 ---
 
 ## 🏋️ Model Training
@@ -280,8 +279,6 @@ Telecom-Customer-Churn-Prediction/
 ├── README.md                      # Project documentation
 ├── LICENSE                        # License information (optional)
 └── .gitignore                     # Git ignore configuration
-
-```
 
 ```
 
