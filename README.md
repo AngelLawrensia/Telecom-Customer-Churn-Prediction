@@ -94,27 +94,49 @@ To improve model interpretability, the application automatically selects the app
   - Joblib
   - SHAP
   - OpenPyXL
- 
-### Setup -> belum
+    
+### Setup
 
 1. Clone the repository:
+
 ```bash
-git clone <repository-url, for example: https://github.com/yourusername/yourprojectname.git>
-cd ProjectName
+git clone https://github.com/AngelLawrensia/Telecom-Customer-Churn-Prediction.git
+cd Telecom-Customer-Churn-Prediction
 ```
 
-2. Create a conda environment:
+2. Create and activate a Python virtual environment (recommended):
+
+**Windows**
 ```bash
-conda create -n projectname python=3.8
-conda activate projectname
+python -m venv venv
+venv\Scripts\activate
 ```
 
-3. Install dependencies:
+**macOS / Linux**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install the required dependencies:
+
+Run the following command to install all required Python packages listed in `requirements.txt`:
+
 ```bash
 pip install -r requirements.txt
 ```
 
----
+4. Launch the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+5. Open the application in your browser (typically):
+
+```text
+http://localhost:8501
+```
 
 ## 📊 Dataset
 
@@ -216,20 +238,15 @@ Recommended environment:
 
 ---
 
-## 📊 Results -> belum
+## 📊 Results
 
-**Section Description** This section presents the final outcomes, outputs, or achievements of the project. The content of this section may vary depending on the project type.  The goal is to demonstrate what has been successfully developed, implemented, evaluated, or achieved.
-What to include:
-- Final project outcomes.
-- System implementation results.
-- Experimental or testing results.
-- Visualization results like evaluation graphs, screenshots of the system or dashboard.
-- Performance analysis.
-- User testing or usability results.
-- Comparison with baseline or previous systems or benchmark comparison.
-- Deployment results.
+The proposed approach successfully developed an end-to-end customer churn prediction system using the CRISP-DM methodology. After evaluating multiple machine learning algorithms under different experimental settings, the **Random Forest** model with refinement tuning was selected as the final model.
 
-You can use table or visualization. 
+| Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|-------|---------:|----------:|--------:|---------:|---------:|
+| **Random Forest (Final Model)** | **92.76%** | **83.66%** | **90.37%** | **86.89%** | **97.24%** |
+
+The final model was deployed as an interactive Streamlit application with SHAP-based explainability for both single and batch customer churn prediction.
 
 ---
 
