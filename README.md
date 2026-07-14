@@ -95,7 +95,7 @@ To improve model interpretability, the application automatically selects the app
   - SHAP
   - OpenPyXL
  
-### Setup
+### Setup -> belum
 
 1. Clone the repository:
 ```bash
@@ -116,76 +116,107 @@ pip install -r requirements.txt
 
 ---
 
-## 📊 Dataset Preparation
+## 📊 Dataset
 
-### Name of The Dataset
+This project uses the **IBM Telco Customer Churn Dataset**, a publicly available dataset that contains historical customer information from a telecommunications company. The dataset is widely used for customer churn prediction research and machine learning benchmarking.
 
-**Section Description** Provide information about the dataset used in the project. The dataset must be primary (data obtained for example (not limited to) from surveys, interviews, observations, experiments, sensors, web scrapping/crawling, API collection), not secondary or downloaded from other repository. 
-What to include:
-- Dataset name.
-- Dataset source.
-- Dataset link.
-- Total number of samples.
-- Data structure.
-- File format.
-- Example samples.
+| Item | Description |
+|------|-------------|
+| **Dataset Name** | IBM Telco Customer Churn Dataset |
+| **Source** | Kaggle |
+| **Dataset Link** | https://www.kaggle.com/datasets/yeanzc/telco-customer-churn-ibm-dataset |
+| **Total Records** | 7,043 customers |
+| **Total Features** | 33 attributes |
+| **Target Variable** | Churn Value |
+| **File Format** | CSV |
 
-For example:
-We provide six benchmark datasets for evaluating the Generalized Face Discovery task:
-
-| Dataset | Known IDs | Unknown IDs | Train Samples | Test Samples |
-|---------|-----------|-------------|---------------|--------------|
-| YTF-500 | 250 | 250 | 48,089 | 11,779 |
-| YTF-1000 | 500 | 500 | 96,002 | 23,523 |
-| YTF-2000 | 1,000 | 1,000 | 190,248 | 46,615 |
-| CASIA-500 | 250 | 250 | 46,991 | 11,999 |
-| CASIA-1000 | 500 | 500 | 89,508 | 22,867 |
-| CASIA-2000 | 1,000 | 1,000 | 184,432 | 47,114 |
-
-Or you can just give the link of the dataset if you already upload on the repository like Kaggle or Mendeley Dataset.
+> **Note:** The dataset is not included in this repository due to licensing considerations. Please download it directly from Kaggle using the link above.
 
 ### Download
 
-**The dataset can be obtained at the link**
- 
-**Download links:**
-**Datasets**: [Dataset link on repository or Drive]
+### Dataset Access
 
-Explain the structue of the dataset, for example:
+The IBM Telco Customer Churn Dataset used in this project can be downloaded from Kaggle:
 
-Once downloaded, organize the data as follows:
+**Dataset Source:**  
+https://www.kaggle.com/datasets/yeanzc/telco-customer-churn-ibm-dataset
+
+Alternatively, the dataset link is also available in:
+
 ```
-YourProject/
-├── positive_review2000/
-│   ├── train/
-│   └── test/
-├── negative_review2000/
-│   ├── train/
-│   └── test/
-├── neutral_review1000/
-│   ├── train/
-│   └── test/
+dataset/
+└── Link Dataset.txt
+```
 
+After downloading, place the dataset in the following directory:
+
+```text
+Telecom-Customer-Churn-Prediction/
+├── dataset/
+│   ├── Telco_customer_churn.xlsx
+│   └── Link Dataset.txt
+├── models/
+├── notebooks/
+├── images/
+├── app.py
+├── requirements.txt
+└── README.md
+
+```
 ```
 ---
 
-## 🏋️ Training
+## 🏋️ Model Training
 
-**Section Description** For big data, explain how to train the model. What to include:
-- Training scripts.
-- Training parameters.
-- Hyperparameters.
-- Execution commands.
-- GPU/CPU requirements.
+The machine learning models were developed and evaluated using the Jupyter Notebook provided in the `notebooks/` directory. The training pipeline follows the CRISP-DM methodology and consists of data preprocessing, class imbalance handling, model training, hyperparameter optimization, model evaluation, and model serialization.
 
-Example Structure:
-```bash
-python train.py --config configs/train.yaml
+### Training Pipeline
+
+1. Load the IBM Telco Customer Churn Dataset.
+2. Perform data preprocessing:
+   - Data cleaning
+   - Feature selection
+   - Categorical encoding
+   - Train-test split (80:20)
+   - Feature scaling
+3. Apply SMOTE to balance the training dataset.
+4. Train multiple machine learning models:
+   - Logistic Regression
+   - K-Nearest Neighbors (KNN)
+   - Naïve Bayes
+   - Random Forest
+   - XGBoost
+5. Optimize model hyperparameters using GridSearchCV and refinement tuning.
+6. Evaluate each model using Accuracy, Precision, Recall, F1-score, ROC-AUC, and Confusion Matrix.
+7. Save the best-performing model and preprocessing artifacts for deployment.
+
+### Output Files
+
+After training, the following files are generated:
+
+```text
+models/
+├── randomforest_final.pkl
+├── scaler.pkl
+├── columns.pkl
+└── explainer.pkl
+```
+
+### Hardware Requirements
+
+The experiments were conducted on a standard personal computer without GPU acceleration.
+
+Recommended environment:
+
+- Python 3.11+
+- 8 GB RAM (minimum)
+- Windows 10/11 (or equivalent operating system)
+
 ```
 
 ---
 
-## 📊 Results
+## 📊 Results -> belum
 
 **Section Description** This section presents the final outcomes, outputs, or achievements of the project. The content of this section may vary depending on the project type.  The goal is to demonstrate what has been successfully developed, implemented, evaluated, or achieved.
 What to include:
@@ -204,90 +235,72 @@ You can use table or visualization.
 
 ## 🏗️ Project Structure
 
-**Section Description** Explain you project structure.
-
-For Example: 
+```text
+Telecom-Customer-Churn-Prediction/
+│
+├── dataset/                       # Dataset reference
+│   ├── Link Dataset.txt           # Kaggle dataset link
+│   └── README.md                  # Dataset download instructions
+│
+├── images/                        # Figures and documentation assets
+│   ├── research_workflow.png
+│   ├── deployment_workflow.png
+│   ├── shap_summary.png
+│   ├── streamlit_home.png
+│   └── streamlit_prediction.png
+│
+├── models/                        # Trained machine learning models
+│   ├── randomforest_final.pkl
+│   ├── scaler.pkl
+│   ├── columns.pkl
+│   └── explainer.pkl
+│
+├── notebooks/                     # Model development and experiments
+│   └── Customer_Churn_Model_Training.ipynb
+│
+├── app.py                         # Streamlit deployment application
+├── requirements.txt               # Python dependencies
+├── README.md                      # Project documentation
+├── LICENSE                        # License information (optional)
+└── .gitignore                     # Git ignore configuration
 
 ```
-FaceGCD/
-├── data_loader/              # Dataset loaders and augmentations
-│   ├── augmentations/        # Data augmentation strategies
-│   ├── youtube_faces_*.py    # YTF dataset loaders
-│   ├── casia_webface_*.py    # CASIA dataset loaders
-│   └── data_loaders.py       # Main data loading utilities
-├── model/                    # Model architectures
-│   ├── dino_vision_transformer.py  # DINO ViT backbone
-│   ├── prefix_generator.py   # HyperNetwork-based prefix generator
-│   ├── ViT_face.py           # Face-specific ViT components
-│   └── mobilenet.py          # Landmark CNN
-├── trainer/                  # Training utilities
-│   ├── trainer.py            # Main training loop
-│   └── faster_mix_k_means_pytorch.py  # Semi-supervised K-Means
-├── utils/                    # Utility functions
-│   ├── cluster_utils.py      # Clustering utilities
-│   ├── losses.py             # Loss functions
-│   └── dino_utils.py         # DINO-specific utilities
-├── shell/                    # Shell scripts for experiments
-├── train.py                  # Training script
-├── extract_features.py       # Feature extraction script
-├── SSK.py                    # Semi-supervised K-Means evaluation
-└── requirements.txt          # Python dependencies
+
 ```
 
 ---
 
 ## 📝 Citation
 
-**Section Description** Use this section if the project is associated with a publication or research paper. What to include:
-- Citation format.
-- DOI.
-- BibTeX entry.
+This research has not been formally published yet.
 
-For Example:
-If you find this work useful for your research, please cite:
+Citation information will be added after publication.
 
-```bibtex
-@article{oh2025facegcd,
-  title={...},
-  authors={...},
-  journal={...},
-  year={...}
-}
 ```
 
 ---
 
 ## 🙏 Acknowledgments
 
-**Section Description** Provide acknowledgements to contributors or supporting organizations. What to include:
-- (Mandatory) Big Data Lab, Information Systems Study Program, Universitas Multimedia Nusantara (UMN).
-- (if any) Sponsors/Partners.
-- (if any) Research groups.
-- (if any) Dataset providers.
-- (if any) Collaborators.
+The author would like to express sincere gratitude to all individuals and organizations that supported the completion of this project.
+
+Special thanks to:
+
+- **Big Data Laboratory**, Information Systems Study Program, Universitas Multimedia Nusantara (UMN), for providing the project template and academic support.
+- **Information Systems Study Program**, Universitas Multimedia Nusantara (UMN), for supporting this undergraduate research.
+- **IBM** and **Kaggle**, for providing the IBM Telco Customer Churn Dataset used in this research.
+- The research supervisor and academic reviewers for their valuable guidance, feedback, and suggestions throughout the research process.
 
 ---
 
 ## 📧 Contact
 
-**Section Description** Provide maintainer or author contact information.
-
-For Example:
-For questions or issues, please:
-- Open an issue on GitHub
-- Contact: youremail@mail.com
+For questions or suggestions regarding this project, please open an issue in this repository.
 
 ---
 
 ## 📜 License
 
-**Section Description** Please state your project license of any. For example:
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-This project is released under the MIT License. See [LICENSE](LICENSE) file for details.
-
----
-
-## Tips
-
-You can just download this Read Me template and modify it. 
 ---
