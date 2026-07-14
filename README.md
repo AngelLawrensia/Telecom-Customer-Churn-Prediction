@@ -241,7 +241,7 @@ The experiments were conducted on a standard personal computer without GPU accel
 
 Recommended environment:
 
-- Python 3.11+
+- Python 3.10
 - 8 GB RAM (minimum)
 - Windows 10/11 (or equivalent operating system)
 
@@ -283,7 +283,7 @@ Telecom-Customer-Churn-Prediction/
 │
 ├── app.py                         # Streamlit deployment application
 ├── requirements.txt               # Python dependencies
-├── runtime.txt
+├── runtime.txt                    # Python Version
 ├── README.md                      # Project documentation
 └── .gitignore                     # Git ignore configuration
 
