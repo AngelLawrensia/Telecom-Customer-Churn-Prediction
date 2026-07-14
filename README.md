@@ -266,7 +266,6 @@ Telecom-Customer-Churn-Prediction/
 │
 ├── dataset/                       # Dataset reference
 │   ├── Link Dataset.txt           # Kaggle dataset link
-│   └── README.md                  # Dataset download instructions
 │
 ├── images/                        # Figures and documentation assets
 │   ├── research_workflow.png
