@@ -64,22 +64,37 @@ Experimental results show that Random Forest achieved the best overall performan
 
 The research follows the CRISP-DM methodology, consisting of six stages: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, and Deployment. The workflow begins with customer churn data collection from the IBM Telco Customer Churn Dataset, followed by preprocessing, machine learning model development, performance evaluation, SHAP-based model interpretation, and deployment through a Streamlit web application.
 
+### 2. Deployment Workflow
+
+<p align="center">
+  <img src="images/deployment_workflow.png" alt="Deployment Workflow" width="1000">
+</p>
+
+The deployment workflow illustrates how the trained model is integrated into an interactive Streamlit application. The application first loads the trained Random Forest model together with the preprocessing artifacts, including the StandardScaler, training feature list, and SHAP explainer.
+
+Users can upload customer data in CSV or Excel format. The uploaded data then undergoes preprocessing, including data cleaning, CustomerID handling, categorical encoding, feature alignment with the training dataset, and feature scaling. After preprocessing is completed, the optimized Random Forest model generates customer churn predictions together with the corresponding prediction probabilities.
+
+To improve model interpretability, the application automatically selects the appropriate SHAP visualization based on the number of uploaded records. A **SHAP Waterfall Plot** is generated for single-customer predictions, while a **SHAP Summary Plot** and feature importance visualization are provided for batch predictions. This deployment enables users to obtain accurate, explainable, and interactive customer churn predictions through a web-based interface.
+
+
 ---
 
 ## 🚀 Installation
 
-**Section Description** Provide instructions for setting up the project environment.
-
-For Example:
-
 ### Requirements
 
-- Python 3.8+
-- PyTorch 2.3.1+
-- CUDA 11.8+
-- APEX (for mixed precision training)
-- etc.
-
+- Python 3.11+
+- pip
+- Required Python libraries (see `requirements.txt`):
+  - Streamlit
+  - Pandas
+  - NumPy
+  - Matplotlib
+  - Scikit-learn
+  - Joblib
+  - SHAP
+  - OpenPyXL
+ 
 ### Setup
 
 1. Clone the repository:
