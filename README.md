@@ -1,72 +1,68 @@
-# Project Title
+# Telecom Customer Churn Prediction using Machine Learning
 
-Write the project title clearly and concisely.
-Example: Official PyTorch implementation of **"<Paper / Research Title>"**.
-
-📄 **Paper**: [<your paper link, example:](https://www.researchgate.net/)
+📄 **Paper**: Will be added after publication.
 
 ---
 
 ## 📋 Overview
+Customer churn prediction plays an important role in helping telecommunication companies retain customers and reduce customer acquisition costs. This project develops and optimizes machine learning models to predict customer churn using the IBM Telco Customer Churn Dataset within the CRISP-DM framework.
 
-**Section Description** This section provides a concise overview of the project. What to Include:
-- Brief background information.
-- Research or project objectives.
-- Main dataset or data sources.
-- Methods, frameworks, or algorithms used.
-- Expected results or contributions.
+The project compares five supervised learning algorithms—Logistic Regression, K-Nearest Neighbors (KNN), Naïve Bayes, Random Forest, and XGBoost. To improve predictive performance, the workflow incorporates SMOTE for handling class imbalance, GridSearchCV with refinement tuning for hyperparameter optimization, and cross-validation for model evaluation. Model interpretability is enhanced using SHAP (SHapley Additive exPlanations), while the best-performing model is deployed through a Streamlit web application for interactive customer churn prediction.
+
+Experimental results show that Random Forest achieved the best overall performance after optimization, obtaining an Accuracy of 92.76%, Precision of 83.66%, Recall of 90.37%, F1-score of 86.89%, and ROC-AUC of 97.24%. This project demonstrates an end-to-end machine learning workflow that combines predictive performance, model interpretability, and practical deployment to support data-driven customer retention strategies in the telecommunications industry.
 
 ### Key Features
+### Key Features
 
-**Section Description** This section highlights the main functionalities, capabilities, or technical components of the project. The goal is to help readers quickly understand what the system can do and what makes it technically useful. What to include:
-- Main functionalities of the system.
-- Important technical features.
-- (optional if Big data) AI/ML capabilities.
-- (optional if any) Automation or integration features.
-- Performance-related features.
+- **End-to-End Machine Learning Pipeline**  
+  Implements a complete machine learning workflow based on the CRISP-DM methodology, covering data understanding, preprocessing, modeling, evaluation, interpretation, and deployment.
 
-For Example:
-- **Novel Task**: GFD requires recognizing both labeled and unlabeled known identities (IDs) while simultaneously discovering new, previously unseen IDs
-- **Dynamic Prefix Generation**: Instance-specific feature extractors using lightweight, layer-wise prefixes generated on-the-fly by a HyperNetwork
-- **State-of-the-art Performance**: Significantly outperforms existing GCD methods and ArcFace baseline on fine-grained face recognition tasks
-- **High Cardinality Support**: Handles hundreds or thousands of visually similar face IDs effectively
+- **Multi-Model Performance Comparison**  
+  Evaluates and compares Logistic Regression, K-Nearest Neighbors (KNN), Naïve Bayes, Random Forest, and XGBoost to identify the most effective model for customer churn prediction.
+
+- **Class Imbalance Handling**  
+  Applies Synthetic Minority Over-sampling Technique (SMOTE) to improve the model's ability to identify minority-class (churn) customers.
+
+- **Hyperparameter Optimization**  
+  Uses GridSearchCV and refinement tuning to optimize model performance and improve generalization.
+
+- **Explainable AI (XAI)**  
+  Integrates SHAP (SHapley Additive exPlanations) to explain feature contributions and improve prediction transparency.
+
+- **Interactive Streamlit Application**  
+  Provides a user-friendly web interface for predicting customer churn from CSV or Excel files, including both single and batch prediction modes.
+
+- **Prediction Probability & Visualization**  
+  Displays churn probability together with SHAP visualizations to help users understand prediction results.
+
+- **High Prediction Performance**  
+  The optimized Random Forest model achieved 92.76% Accuracy, 83.66% Precision, 90.37% Recall, 86.89% F1-score, and 97.24% ROC-AUC on the IBM Telco Customer Churn Dataset.
 
 ---
 
 ## 🎯 Key Contributions
 
-**Section Description** This section explains the main research, technical, or practical contributions of the project. This section focuses on:
-- Novelty,
-- Research contributions,
-- Methodological improvements,
-- Technical innovations,
-- Real-world impact.
+1. **Comprehensive Machine Learning Comparison**  
+   Conducted a comparative analysis of five supervised machine learning algorithms—Logistic Regression, K-Nearest Neighbors (KNN), Naïve Bayes, Random Forest, and XGBoost—for customer churn prediction in the telecommunications industry.
 
-For example:
-1. **Generalized Face Discovery (GFD)**: A new task formulation that bridges face identification and clustering in open-world scenarios
-2. **Dynamic Prefix Mechanism**: HyperNetwork-based prefix generators that create instance-specific feature extractors without massive model capacity
-3. **Comprehensive Benchmarks**: Six GFD benchmark datasets (YTF-500/1000/2000, CASIA-500/1000/2000)
-4. **Strong Generalization**: Competitive performance on generic GCD benchmarks (CIFAR-100, ImageNet-100, CUB, etc.)
+2. **Integrated Model Optimization**  
+   Improved prediction performance by combining SMOTE for class imbalance handling with GridSearchCV and refinement hyperparameter tuning within a unified CRISP-DM workflow.
 
+3. **Explainable AI Integration**  
+   Enhanced model transparency by incorporating SHAP (SHapley Additive exPlanations), enabling interpretation of feature contributions and supporting more explainable decision-making.
+
+4. **Practical Deployment**  
+   Developed an interactive Streamlit-based application that allows users to upload customer data, generate churn predictions, view prediction probabilities, and explore SHAP explanations.
+   
 ---
 
 ## Project Architecture / Research Workflow
 
-**Section Description** This section explains the overall research pipeline or system workflow. What to include:
-- Research methodology flowcharts
-- Architecture diagram
-- System pipeline illustrations
-
-Can be include:
-- Input and output for each stage.
-- Tools, frameworks, or technologies used.
-- Data flow or system process
-
-For Example:
-
 <p align="center">
-  <img src="examplearchitecture.png" alt="Architecture of Your Project">
+  <img src="images/research_workflow.png" alt="Research Workflow" width="900">
 </p>
+
+The research follows the CRISP-DM methodology, consisting of six stages: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, and Deployment. The workflow begins with customer churn data collection from the IBM Telco Customer Churn Dataset, followed by preprocessing, machine learning model development, performance evaluation, SHAP-based model interpretation, and deployment through a Streamlit web application.
 
 ---
 
